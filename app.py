@@ -112,9 +112,7 @@ with st.form("address_form"):
     submitted = st.form_submit_button("Check Match")
 
 if submitted:
-    # api_key = 'AIzaSyACSIsgNZhJxxCWnV5mfR9rAbp5d_C9fhQ'
-    # api_key = 'AIzaSyDm-XVGhcztt4_9tof_Lm2W-FFLIkDH_4Y'
-    api_key = 'AIzaSyAaZ7XA17dD84lpXMGjHmjbxgJWTe5dKcg'
+    api_key = st.secrets["GEMINI_API_KEY"]
     if not api_key:
         st.error("Missing GEMINI_API_KEY environment variable.")
     elif not addr1.strip() or not addr2.strip():
